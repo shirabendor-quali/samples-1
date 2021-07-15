@@ -33,7 +33,7 @@ echo "****************************************************************"
 mkdir /home/artifacts
 cd /home/artifacts || exit
 #todo: replace with QualiTorque
-git clone https://github.com/cloudshell-colony/sample_java_spring_source.git
+git clone https://github.com/QualiTorque/sample_java_spring_source.git
 
 
 echo "****************************************************************"
