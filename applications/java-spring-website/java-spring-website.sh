@@ -32,8 +32,8 @@ echo "Get the web application from github"
 echo "****************************************************************"
 mkdir /home/artifacts
 cd /home/artifacts || exit
-#todo: replace with QualiTorque
-git clone https://github.com/shirabendor-quali/sample_java_spring_source.git
+
+git clone https://github.com/QualiTorque/sample_java_spring_source.git
 
 
 echo "****************************************************************"
