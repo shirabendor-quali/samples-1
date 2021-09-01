@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#shellcheck disable=SC2128
 # Stop Script on Error
 set -e
 
@@ -47,7 +47,3 @@ GRANT ALL ON *.* TO ${DB_USER}@'%' IDENTIFIED BY '${DB_PASS}';
 EOF
 
 mysql --defaults-extra-file=/home/pk/my.cnf -e "FLUSH PRIVILEGES;"
-
-
-
-
