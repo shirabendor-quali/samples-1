@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/bash
+#shellcheck disable=SC2128
 # Stop Script on Error
 set -e
 
