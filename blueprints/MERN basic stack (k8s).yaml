@@ -9,7 +9,7 @@ inputs:
 metadata:
   description: >
     EKS deployment of todo-app
-clouds: 
+clouds:
   - AWS/EKS
 applications:
   - todo-ui:
@@ -17,7 +17,7 @@ applications:
         - API_URL: $torque.applications.todo-api.dns
         - DOCKER_TAG: $version
       depends_on:
-        - todo-api  
+        - todo-api
   - todo-api:
       input_values:
         - DB_URL: $torque.applications.mongodb.dns
@@ -38,4 +38,3 @@ ingress:
         - path: /todos
           application: todo-api
           port: 7000
-  
