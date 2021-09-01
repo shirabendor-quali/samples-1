@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #shellcheck disable=SC2128,SC1090,SC2086,SC2016
 ## IMITATE PASSING THE ENTRYPOINT THE "mongod" CMD
 #set -- "mongod"
