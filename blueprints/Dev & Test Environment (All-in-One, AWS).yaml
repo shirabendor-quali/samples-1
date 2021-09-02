@@ -42,3 +42,4 @@ applications:
       # the database is ready
       depends_on:
         - mysql
+
