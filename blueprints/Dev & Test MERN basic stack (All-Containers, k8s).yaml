@@ -1,4 +1,4 @@
---- # yamllint disable rule:new-line-at-end-of-file
+---
 spec_version: 1
 kind: blueprint
 inputs:
