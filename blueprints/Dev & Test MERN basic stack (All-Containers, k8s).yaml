@@ -38,4 +38,3 @@ ingress:
         - path: /todos
           application: todo-api
           port: 7000
-  
