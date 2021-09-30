@@ -1,0 +1,29 @@
+spec_version: 1
+kind: application
+inputs:
+  - WORDPRESS_DB_HOST
+  - WORDPRESS_DB_USER
+  - WORDPRESS_DB_PASSWORD
+  - WORDPRESS_DB_NAME
+infrastructure:
+  connectivity:
+    external:
+      - port_info:
+          port: 80
+  compute:
+    spec:
+       kubernetes:
+        cpu: 1000m
+        ram: 256Mi 
+configuration:
+  start:
+    command: docker-entrypoint.sh apache2-foreground
+  healthcheck:
+    timeout: 100
+    wait_for_ports: ALL
+source:
+  os_type: linux
+  image:    
+    docker_image: 
+       - name: wordpress
+         tag: 5.8.1-php7.4-apache
