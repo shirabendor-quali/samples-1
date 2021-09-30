@@ -1,0 +1,42 @@
+---
+spec_version: 1
+kind: blueprint
+
+metadata:
+  description: >
+    wordpress on EKS + RDS
+
+clouds:
+  - AWS/EKS
+
+# These are the blueprint parameters and their default values.
+# The values can be changed when creating a sandbox based on this
+# blueprint.
+inputs:
+  - DB_USER: wordpress  # Used to define the db admin account
+  - DB_PASS:
+      display_style: masked
+      description: please set the root database password
+      default_value: Torque!123
+  # Used to define the db admin password
+  - DB_NAME: demo_db  # DB_NAME - a target database name
+
+# These are the applications that will be deployed in this blueprint
+applications:
+ - wordpress-EKS:
+      input_values:
+        - WORDPRESS_DB_HOST: "${torque.services.rds-mysql-eks.outputs.hostname}:3306"
+        - WORDPRESS_DB_USER: $DB_USER
+        - WORDPRESS_DB_PASSWORD: $DB_PASS
+        - WORDPRESS_DB_NAME: $DB_NAME
+      # The wodpress site depends on MySQL and will start deploying
+      # only when the database is ready
+      depends_on:
+        - rds-mysql-eks
+services:
+  - rds-mysql-eks:  # One instance of mysql (see: services/rds-mysql/rds-mysql.yaml)
+      input_values:
+        - DB_NAME: $DB_NAME
+        - DB_USER: $DB_USER
+        - DB_PASS: $DB_PASS
+        - SANDBOX_ID: $torque.environment.id
