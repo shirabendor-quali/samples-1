@@ -20,7 +20,7 @@ configuration:
     script: todo-api-command.sh
   healthcheck:
     timeout: 100
-    wait_for_ports: ALL
+    script: todo-api-hc.sh
 source:
   image:    
     docker_image:
