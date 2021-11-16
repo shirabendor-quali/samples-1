@@ -1,0 +1,34 @@
+kind: application
+spec_version: 1
+
+inputs:
+  - DOCKER_TAG
+  - SERVER_URL
+
+infrastructure:
+  connectivity:
+    internal:
+      - port_info:
+          port: 3000
+  # compute:
+  #   spec:        
+  #      kubernetes:
+  #       cpu: 1000m
+  #       ram: 512Mi
+configuration:
+  initialization:
+    script: react-frontend.sh
+  start:
+    command: >
+      cd /app/frontend;
+      npm start 
+  healthcheck:
+    timeout: 100
+    wait_for_ports: 3000
+source:
+  image:    
+    docker_image:
+       - name: torquesamples/flask-ui
+         tag: $DOCKER_TAG
+         username: root
+  os_type: linux

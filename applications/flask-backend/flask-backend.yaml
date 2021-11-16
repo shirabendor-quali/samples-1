@@ -1,0 +1,29 @@
+kind: application
+inputs:
+  - DOCKER_TAG
+
+infrastructure:
+  connectivity:
+    internal:
+      - port_info:
+          port: 5000
+  # check what values are 'good'
+  # compute:
+  #   spec:        
+  #      kubernetes:
+  #       cpu: 1000m
+  #       ram: 256Mi
+configuration:
+  start:
+    command: flask run --host=0.0.0.0
+  healthcheck:
+    timeout: 120
+    wait_for_ports: 5000
+source:
+  image:    
+    docker_image:
+       - name: torquesamples/flask-api
+         tag: $DOCKER_TAG
+         username: root
+  os_type: linux
+spec_version: 1
