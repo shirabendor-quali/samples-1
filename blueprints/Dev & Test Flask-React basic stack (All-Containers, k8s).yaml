@@ -43,7 +43,7 @@ ingress:
           interval: 40
           path: /api
           status-codes: 200-299
-          timeout: 120
+          timeout: 180
           unhealthy-threshold: 3
       - application: react-frontend
         port: 3000
@@ -53,7 +53,7 @@ ingress:
           interval: 45
           path: /
           status-codes: 200-299
-          timeout: 120
+          timeout: 180
           unhealthy-threshold: 4
 
 
