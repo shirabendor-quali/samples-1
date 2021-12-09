@@ -23,7 +23,7 @@ configuration:
       cd /app/frontend;
       npm start 
   healthcheck:
-    timeout: 100
+    timeout: 180
     wait_for_ports: 3000
 source:
   image:    
