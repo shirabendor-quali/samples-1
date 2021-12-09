@@ -10,11 +10,11 @@ infrastructure:
     internal:
       - port_info:
           port: 3000
-  # compute:
-  #   spec:        
-  #      kubernetes:
-  #       cpu: 1000m
-  #       ram: 512Mi
+  compute:
+    spec:        
+       kubernetes:
+        cpu: 1000m
+        ram: 512Mi
 configuration:
   initialization:
     script: react-frontend.sh
@@ -28,7 +28,7 @@ configuration:
 source:
   image:    
     docker_image:
-       - name: torquesamples/flask-ui
+       - name: torquesamples.azurecr.io/flask-ui
          tag: $DOCKER_TAG
          username: root
   os_type: linux
