@@ -24,7 +24,7 @@ configuration:
 source:
   image:    
     docker_image:
-       - name: colonysamples/todo-ui
+       - name: torquesamples.azurecr.io/todo-ui
          tag: $DOCKER_TAG
          username: root
   os_type: linux
