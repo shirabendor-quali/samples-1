@@ -40,23 +40,18 @@ ingress:
         shortcut: ${torque.environment.public_address}/api
         path: /api
         health_check:                  
-          interval: 40
+          interval: 15
           path: /api
-          status-codes: 200-299
-          timeout: 180
-          unhealthy-threshold: 3
+          status_codes: 200-299
+          timeout: 5
+          unhealthy_threshold: 20
       - application: react-frontend
         port: 3000
         default: true
         shortcut: ${torque.environment.public_address}
-        health_check:                  
-          interval: 45
+        health_check:
+          interval: 15
           path: /
-          status-codes: 200-299
-          timeout: 180
-          unhealthy-threshold: 4
-
-
-
-
-
+          status_codes: 200-299
+          timeout: 5
+          unhealthy_threshold: 20
