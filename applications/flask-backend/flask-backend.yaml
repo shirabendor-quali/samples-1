@@ -16,7 +16,7 @@ configuration:
   start:
     command: flask run --host=0.0.0.0
   healthcheck:
-    timeout: 120
+    timeout: 180
     wait_for_ports: 5000
 source:
   image:    
