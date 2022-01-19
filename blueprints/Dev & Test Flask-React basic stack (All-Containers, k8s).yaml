@@ -18,11 +18,6 @@ inputs:
       description: that will be used as the docker images tag
       default_value: latest
       optional: true
-      possible_values:
-        - version1
-        - version2
-        - version3
-        - latest
 
 applications:
   - react-frontend:
