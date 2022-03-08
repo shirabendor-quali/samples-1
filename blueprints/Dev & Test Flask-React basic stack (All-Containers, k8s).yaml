@@ -10,7 +10,7 @@ metadata:
     Flask framework + React.js Application running on K8s
 
 clouds:
-  - AWS/EKS
+  - aws-demo/eks-demo
 
 
 inputs:
