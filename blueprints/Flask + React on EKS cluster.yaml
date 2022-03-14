@@ -7,7 +7,7 @@ kind: blueprint
 
 metadata: 
   description: >
-    Flask framework + React.js Application running on K8s
+    Flask framework with React application basic stack (All-Containers)
 
 clouds:
   - aws-demo/eks-demo

@@ -7,7 +7,7 @@ kind: blueprint
 
 metadata: 
   description: >
-    Ruby on Rails frontend and backend in one container on EKS, AWS ElastiCache Redis and RDS PostgerSQL as managed services
+    Ruby on Rails application running on EKS cluster, using AWS Elasticache and AWS RDS (PostgreSQL)
 clouds:
   - aws-demo/eks-demo
 
