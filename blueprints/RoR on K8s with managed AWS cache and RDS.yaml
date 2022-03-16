@@ -9,7 +9,7 @@ metadata:
   description: >
     Ruby on Rails application running on EKS cluster, using AWS Elasticache and AWS RDS (PostgreSQL)
 clouds:
-  - aws-demo/eks-demo
+  - awsdemo/eksdemo
 
 inputs:
   - version:
