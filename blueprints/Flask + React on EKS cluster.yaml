@@ -10,7 +10,7 @@ metadata:
     Flask framework with React application basic stack (All-Containers)
 
 clouds:
-  - aws-demo/eks-demo
+  - AWS1/EKS1
 
 
 inputs:
