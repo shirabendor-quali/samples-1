@@ -8,7 +8,7 @@ inputs:
   - DB_PASS
   - SANDBOX_ID
 module:
-  source: github.com/orel-h/samples/terraform/terraform-utils/elasticache-postgres-modules # todo - change 'orel-h' to 'qualiToruqe' after merging to master
+  source: github.com/qualiToruqe/samples/terraform/terraform-utils/elasticache-postgres-modules
 
 terraform_version: 1.0.3
 
