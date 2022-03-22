@@ -8,7 +8,7 @@ inputs:
   - DB_PASS
   - SANDBOX_ID
 module:
-  source: github.com/qualiToruqe/samples/terraform/terraform-utils/elasticache-postgres-modules
+  source: github.com/QualiTorque/samples/terraform/terraform-utils/elasticache-postgres-modules
 
 terraform_version: 1.0.3
 
